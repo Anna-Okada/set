@@ -1,4 +1,7 @@
-package org.example;
+package org.example.model;
+
+import org.example.exception.InvalidTablePositionException;
+import org.example.exception.OutOfCardsException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -129,6 +132,7 @@ public class Table {
         }
     }
 
+    // determines if there is a SET or if there are multiple SETS
     public void oneOrMoreSETs(Table table) throws InvalidTablePositionException {
         Hand hand = new Hand();
         Set<List<Integer>> positionsSet = new HashSet<>();
@@ -206,6 +210,7 @@ public class Table {
     }
 
     public void displayTable() {
+        System.out.println();
         for (int i = 0; i < table.size(); i += 3) {
             for (int j = 0; j < 3; j++) {
                 System.out.printf("%-12s        ", table.get(i + j).getShapeAsString());

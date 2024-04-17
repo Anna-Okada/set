@@ -1,4 +1,6 @@
-package org.example;
+package org.example.model;
+
+import org.example.exception.InvalidTablePositionException;
 
 import java.util.ArrayList;
 
@@ -106,7 +108,6 @@ public class Hand {
             shading = true;
         }
         if (value == true && shape == true && color == true && shading == true) {
-//			hand.clear();
             return true;
         }
         hand.clear();
